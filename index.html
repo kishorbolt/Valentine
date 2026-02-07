@@ -1,1 +1,94 @@
-valentine website
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valentine 💖</title>
+
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#ff5f9e,#ffc371);
+    font-family:Arial,sans-serif;
+    overflow:hidden;
+}
+.container{
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    text-align:center;
+    width:90%;
+    max-width:350px;
+}
+h1{
+    color:#ff2e63;
+}
+.buttons{
+    position:relative;
+    height:120px;
+}
+button{
+    padding:12px 20px;
+    border:none;
+    border-radius:30px;
+    font-size:16px;
+}
+#yes{
+    background:#ff2e63;
+    color:white;
+}
+#no{
+    background:#ddd;
+    position:absolute;
+    left:60%;
+    top:60%;
+}
+.kiss{
+    display:none;
+}
+.kiss img{
+    width:220px;
+    border-radius:15px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container" id="main">
+<h1>Will you be my Valentine? 💖</h1>
+<div class="buttons">
+<button id="yes">YES 💕</button>
+<button id="no">NO 😏</button>
+</div>
+</div>
+
+<div class="container kiss" id="kiss">
+<h1>Dudu ❤️ Bubu</h1>
+<img src="https://media.tenor.com/2roX3uxz_68AAAAC/dudu-bubu-kiss.gif">
+</div>
+
+<script>
+const noBtn=document.getElementById("no");
+const yesBtn=document.getElementById("yes");
+
+function moveNo(){
+    noBtn.style.left=Math.random()*(window.innerWidth-100)+"px";
+    noBtn.style.top=Math.random()*(window.innerHeight-100)+"px";
+}
+
+noBtn.addEventListener("mouseover",moveNo);
+noBtn.addEventListener("touchstart",moveNo);
+
+yesBtn.addEventListener("click",()=>{
+    document.getElementById("main").style.display="none";
+    document.getElementById("kiss").style.display="block";
+});
+</script>
+
+</body>
+</html>
